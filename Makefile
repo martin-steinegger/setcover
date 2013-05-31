@@ -2,7 +2,7 @@ PROGRAM = graphcluster
 C_FILES := $(shell find . ! -name "Test*" -name "*.cpp")
 OBJS := $(patsubst %.cpp, %.o, $(C_FILES))
 CC = g++ 
-CFLAGS = -g -Wall -Ilib -m64 -ffast-math -ftree-vectorize -O3 -I./lib/ffindex/src/ -L./lib/ffindex/src/ -lffindex  -Wno-write-strings 
+CFLAGS = -g -Wall -m64 -ffast-math -ftree-vectorize -O3 -Wno-write-strings 
 LDFLAGS =
 
 all: $(PROGRAM)

@@ -7,7 +7,6 @@
 //
 
 #include <iostream>
-#include "FixedSizeStack.h"
 #include "LinearMultiArray.h"
 #include "SetCover.h"
 #include <list>
@@ -275,7 +274,7 @@ int main()
 
     std::cout << "start readin";
     std::cout.flush();
-    set_data set_data = read_in_set_data("/Users/aluucard/Documents/workspace/graphcluster/graphcluster/rail4284");
+    set_data set_data = read_in_set_data("/Users/aluucard/Documents/workspace/graphcluster/graphcluster/webdocs.dat");
 //    set_data set_data = create_random_set_data(1000000,1000000);
     std::cout << " --- Done" << std::endl;
     std::cout << "init setcover";
