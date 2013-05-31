@@ -118,10 +118,9 @@ set_data create_random_set_data(int set_size, int elment_count ){
     
     
     unsigned int * element_buffer=(unsigned int *)malloc(n * sizeof(unsigned int));
-    ret_struct.element_size_lookup = (unsigned int *)malloc((n+1) * sizeof(unsigned int));
-    ret_struct.element_size_lookup[n]=0;
+    ret_struct.element_size_lookup = (unsigned int *)malloc((n+2) * sizeof(unsigned int));
     unsigned int * element_size=ret_struct.element_size_lookup;
-    memset(&element_size[0], 0, sizeof(unsigned int)*n);
+    memset(&element_size[0], 0, sizeof(unsigned int)*n+2);
     
     ret_struct.set_sizes = (unsigned int *)malloc((m+1) * sizeof(unsigned int));
     ret_struct.set_sizes[m]=0;
@@ -274,8 +273,8 @@ int main()
 
     std::cout << "start readin";
     std::cout.flush();
-    set_data set_data = read_in_set_data("/Users/aluucard/Documents/workspace/graphcluster/graphcluster/webdocs.dat");
-//    set_data set_data = create_random_set_data(1000000,1000000);
+//    set_data set_data = read_in_set_data("/dev/shm/webdocs.dat");
+    set_data set_data = create_random_set_data(29000000,29000000);
     std::cout << " --- Done" << std::endl;
     std::cout << "init setcover";
     std::cout.flush();
