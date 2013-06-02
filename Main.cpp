@@ -18,71 +18,7 @@
 #include <istream>
 #include <cstring>
 #include <stdlib.h> 
-//
-//#include "DBReader.h"
-//
-//void readInData(char * dbname,char * dbname_index){
-//    DBReader* tdbr = new DBReader(dbname,dbname_index);
-//    tdbr->open();
-//    size_t targetDBSize = tdbr->getSize();
-//    
-//    
-//    float max_weight=0;
-//    int   max_element_count=0;
-//    int   unique_element_id = 1;
-//    int   unique_set_id = 1;
-//    std::map<std::string, element_meta_data> element_meta_data_map;
-//    std::vector<int>   element_id;
-//    std::vector<float> element_weight;
-//    int   set_element_count[targetDBSize+1];
-//    for (int id = 0; id < targetDBSize; id++){
-//        char* data =tdbr->getData(id);
-//        std::istringstream stream(data);
-//        std::string line;
-//        float sum_weight=0;
-//        int element_count = 0;
-//        while (std::getline(stream, line)) {
-//            std::istringstream in(line);
-//            std::string name;
-//            float weight;
-//            in >> name >> weight;
-//            sum_weight += weight;
-//            element_meta_data * data = &element_meta_data_map[name];
-//            if(data->element_id == 0){
-//                data->element_id = unique_element_id++;
-//                data->count++;
-//            }
-//            
-//            element_id.push_back(data->element_id);
-//            element_weight.push_back(weight);
-//            
-//            element_count++;
-//        }
-//        if(sum_weight > max_weight){
-//            max_weight = sum_weight;
-//        }
-//        if(element_count > max_element_count){
-//            max_element_count = element_count;
-//        }
-//        
-//        set_element_count[unique_set_id++]=element_count;
-//        
-//        //      std::cout << sum_weight <<std::endl ;
-//        
-//    }
-//    
-////    std::cout <<  element_meta_data_map["Q2A5B4"].element_id << " " << element_meta_data_map["Q2A5B4"].count << std::endl;
-//    std::cout <<  max_weight << std::endl;
-//    
-//    set_cover setcover(targetDBSize,element_id.size(),max_element_count);
-//    for (int id = 0; id < targetDBSize; id++){
-//        //TODO
-////       setcover.add_set(3, 2,(const unsigned int*)&ids3,(const unsigned short*)&weight3, 2,(const unsigned int *)&element_count);
-//    }
-//    
-//    tdbr->close();
-//
-//}
+
 //  10 5
 //  5 7 8 9 10
 //  5 7
@@ -92,7 +28,6 @@
 struct set_data {
     unsigned int ** sets;
     unsigned short ** weights;
-    
     unsigned int * set_sizes;
     unsigned int * element_size_lookup;
     unsigned int set_count;
@@ -102,13 +37,7 @@ struct set_data {
 };
 
 
-
-
-
 set_data create_random_set_data(int set_size, int elment_count ){
-
-// Open the stream
-
     int n,m;
     m=set_size;
     n=elment_count;
@@ -160,13 +89,6 @@ set_data create_random_set_data(int set_size, int elment_count ){
         
     }
     free(element_buffer);
-    //    for(int i = 0; i<m; i++){
-    //        for(int j = 0; j < set_size[i]; j ++)
-    //            std::cout << sets[i][j] << ":" << weights[i][j] << " ";
-    //
-    //
-    //        std::cout << std::endl;
-    //    }
     
     return ret_struct;
 }
@@ -254,14 +176,6 @@ set_data read_in_set_data(char * dbname){
         set_size[i]=element_counter;
 
     }
-    
-//    for(int i = 0; i<m; i++){
-//        for(int j = 0; j < set_size[i]; j ++)
-//            std::cout << sets[i][j] << ":" << weights[i][j] << " ";
-//
-//        
-//        std::cout << std::endl;
-//    }
 
     return ret_struct;
 }
@@ -273,8 +187,8 @@ int main()
 
     std::cout << "start readin";
     std::cout.flush();
-//    set_data set_data = read_in_set_data("/dev/shm/webdocs.dat");
-    set_data set_data = create_random_set_data(29000000,29000000);
+    set_data set_data = read_in_set_data("testdatafile");
+//    set_data set_data = create_random_set_data(29000000,29000000);
     std::cout << " --- Done" << std::endl;
     std::cout << "init setcover";
     std::cout.flush();
