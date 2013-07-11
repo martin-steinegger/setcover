@@ -1,6 +1,8 @@
-Linear greedy set cover 
+# Linear greedy set cover  #
 
 This version of the greedy set cover is a well optimized linear version. 
+
+## input format ##
 The input format is 
 10 5
 5 7 8 9 10
@@ -13,7 +15,7 @@ The input format is
 5  = sets
 every line is represents one set with the ids
 
-How to use:
+## How to use ##
 git clone https://github.com/martin-steinegger/setcove
 cd setcover
 make
@@ -33,5 +35,5 @@ set id 5 Element: 1, 2, 8,
 set id 1 Element: 5,
 set id 3 Element: 3,
 
-Performance: 
+## Performance ##
 The calculation for 40.000.000 sets with avg. 10 elements per set takes around 3-4 Minutes on a m2.2xlarge instance. 
