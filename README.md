@@ -4,16 +4,17 @@ This version of the greedy set cover is a well optimized linear version.
 
 ## input format ##
 The input format is 
-10 5
-5 7 8 9 10
-5 7
-1 3 6 10
-4 6 7 9 10
-1 2 8 10
+
+    10 5
+    5 7 8 9 10
+    5 7
+    1 3 6 10
+    4 6 7 9 10
+    1 2 8 10
 
 10 = elements
 5  = sets
-every line is represents one set with the ids
+Every line represents one set by the ids
 
 ## How to use ##
 
