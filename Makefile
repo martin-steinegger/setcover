@@ -1,4 +1,4 @@
-PROGRAM = graphcluster 
+PROGRAM = setcover 
 C_FILES := $(shell find . ! -name "Test*" -name "*.cpp")
 OBJS := $(patsubst %.cpp, %.o, $(C_FILES))
 CC = g++ 
