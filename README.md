@@ -43,4 +43,4 @@ Example output
 ## Performance ##
 The calculation for 40.000.000 sets with avg. 10 elements per set takes around 4 Minutes on a m2.2xlarge instance.
 
-![alt tag](https://github.com/martin-steinegger/setcover/blob/master/performance_plot.png)
+![alt tag](https://github.com/martin-steinegger/setcover/blob/master/performance_plot.png?raw=true)
