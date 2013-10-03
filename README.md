@@ -1,4 +1,4 @@
-# Linear greedy set cover  #
+# Time/Memory Linear greedy set cover  #
 
 This version of the greedy set cover is a well optimized linear version. 
 
