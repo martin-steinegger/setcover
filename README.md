@@ -18,7 +18,7 @@ Every line represents one set by the ids
 
 ## How to use ##
 
-    git clone https://github.com/martin-steinegger/setcove
+    git clone https://github.com/martin-steinegger/setcover
     cd setcover
     make
     ./setcover testdatafile
