@@ -182,12 +182,12 @@ set_data read_in_set_data(char * dbname){
 
 
 
-int main()
+int main(int argc, char *argv[])
 {
 
-    std::cout << "start readin";
+    std::cout << "start reading";
     std::cout.flush();
-    set_data set_data = read_in_set_data("testdatafile");
+    set_data set_data = read_in_set_data(argv[1]);
 //    set_data set_data = create_random_set_data(29000000,29000000);
     std::cout << " --- Done" << std::endl;
     std::cout << "init setcover";
